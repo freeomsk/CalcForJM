@@ -5,13 +5,13 @@ import java.util.Scanner;
 //Класс, отвечающий за корректный запуск Калькулятора
 public class Launcher {
     public static void start() {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         printWelcome();
         try {
             while (true) {
                 printUserInstruction();
                 printPrompt();
-                String inputStr = sc.nextLine();
+                String inputStr = scanner.nextLine();
                 if (inputStr.equals("q") || inputStr.equals("Q") || inputStr.equals("й") || inputStr.equals("Й")) {
                     printGoodBye();
                     System.exit(0);
@@ -38,6 +38,7 @@ public class Launcher {
         } catch (Exception e) {
             System.out.println("\nАварийное завершение работы! Брошено исключение: " + e.getMessage());
         }
+        scanner.close();
     }
 
     private static void printWelcome() {
