@@ -14,6 +14,7 @@ public class Launcher {
                 String inputStr = scanner.nextLine();
                 if (inputStr.equals("q") || inputStr.equals("Q") || inputStr.equals("й") || inputStr.equals("Й")) {
                     printGoodBye();
+                    scanner.close();
                     System.exit(0);
                 }
                 String[] inputLine = inputStr.split(" ");
@@ -38,7 +39,6 @@ public class Launcher {
         } catch (Exception e) {
             System.out.println("\nАварийное завершение работы! Брошено исключение: " + e.getMessage());
         }
-        scanner.close();
     }
 
     private static void printWelcome() {
